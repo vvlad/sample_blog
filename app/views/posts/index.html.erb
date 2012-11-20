@@ -1,0 +1,10 @@
+<%= link_to t("new"), new_post_url, class: 'btn btn-info' %>
+
+  <% collection.each do |resource| %>
+    <div id="<%= dom_id(resource) %>" class="<%= dom_class(resource)%>">
+      <h3><%= resource.title%></h3>
+      <%= simple_format resource.content %>
+      <%= link_to t("edit"), edit_post_url(resource), class: 'btn btn-mini btn-success' %>
+    </div>
+  <% end %>
+
